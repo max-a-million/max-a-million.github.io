@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="eng">
+  <head>
+    <meta charset="windows-1251">
+    <title>algorithms</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="../../css/bootstrap.css" rel="stylesheet">
+    <style>
+      body {
+        padding-top: 60px;
+      }
+		tab { 
+			padding-left: 4em; 
+		}
+    </style>
+    <link href="../../css/bootstrap-responsive.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <br><h4>Numeric algorithms</h4>
+	  <ul>
+		<li>Greatest common division:</li>
+		<br>
+		<code>
+			/* Version 1 (Evklid) */<br>
+			public class Main<br>
+			{<br>
+			<tab>public static void main(String[] args)<br>
+			<tab>{<br>
+			<tab><tab>	System.out.println(gcd(60, 24));<br>
+			<tab>}<br><br>
+		  
+			<tab>public static int gcd(int x, int y) {<br><br>
+						
+			<tab><tab>	int r = 0;<br><br>
+						
+			<tab><tab>	do {<br>
+			<tab><tab><tab>		r = x % y;<br>
+			<tab><tab><tab>		x = y;<br>
+			<tab><tab><tab>		y = r;<br><br>
+				  
+			<tab><tab>	} while (r != 0);<br><br>
+						
+			<tab><tab>	return x;<br>
+			<tab>}<br>
+			}
+		</code>
+		<br><br>
+		<code>
+		/* Version 2 (iterative) */<br>
+		public class Main<br>
+		{<br>
+		<tab>public static void main(String[] args)<br>
+		<tab>{<br>
+		<tab><tab>System.out.println(gcd(60, 23));<br>
+		<tab>}<br><br>
+
+		<tab>public static int gcd(int x, int y) {<br><br>
+
+		<tab>	int r = Math.min(x, y);<br><br>
+
+		<tab>	while (true)<br>
+		<tab><tab>	  if (x % r == 0 && y % r == 0) <br>
+		<tab><tab><tab>		return r;<br>
+		<tab><tab>	  else<br>
+		<tab><tab><tab>		r = r - 1;<br><br>
+
+		<tab>	}<br>
+		}
+		</code>
+		
+		<li>Greatest common division:</li>
+		
+	  </ul>
+	  
+	</div> 
+
+  </body>
+</html>
