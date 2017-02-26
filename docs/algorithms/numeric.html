@@ -35,53 +35,62 @@
 	  <ul>
 		<li>Greatest common division:</li>
 		<br>
+		<pre>
 		<code>
-			/* Version 1 (Evklid) */<br>
-			public class Main<br>
-			{<br>
-			<tab>public static void main(String[] args)<br>
-			<tab>{<br>
-			<tab><tab>	System.out.println(gcd(60, 24));<br>
-			<tab>}<br><br>
-		  
-			<tab>public static int gcd(int x, int y) {<br><br>
-						
-			<tab><tab>	int r = 0;<br><br>
-						
-			<tab><tab>	do {<br>
-			<tab><tab><tab>		r = x % y;<br>
-			<tab><tab><tab>		x = y;<br>
-			<tab><tab><tab>		y = r;<br><br>
-				  
-			<tab><tab>	} while (r != 0);<br><br>
-						
-			<tab><tab>	return x;<br>
-			<tab>}<br>
+		/**********************/
+		/* Version 1 (Evklid) */
+		/**********************/
+		
+		public class Main
+		{
+			public static void main(String[] args)
+			{
+				System.out.println(gcd(60, 24));
 			}
-		</code>
-		<br><br>
-		<code>
-		/* Version 2 (iterative) */<br>
-		public class Main<br>
-		{<br>
-		<tab>public static void main(String[] args)<br>
-		<tab>{<br>
-		<tab><tab>System.out.println(gcd(60, 23));<br>
-		<tab>}<br><br>
-
-		<tab>public static int gcd(int x, int y) {<br><br>
-
-		<tab>	int r = Math.min(x, y);<br><br>
-
-		<tab>	while (true)<br>
-		<tab><tab>	  if (x % r == 0 && y % r == 0) <br>
-		<tab><tab><tab>		return r;<br>
-		<tab><tab>	  else<br>
-		<tab><tab><tab>		r = r - 1;<br><br>
-
-		<tab>	}<br>
+		  
+			public static int gcd(int x, int y) {
+						
+				int r = 0;
+						
+				do {
+					r = x % y;
+					x = y;
+					y = r;
+				  
+				} while (r != 0);
+						
+				return x;
+			}
 		}
 		</code>
+		</pre>
+		<br><br>
+		<pre>
+		<code>
+		/*************************/
+		/* Version 2 (iterative) */
+		/*************************/
+		
+		public class Main
+		{
+			public static void main(String[] args)
+			{
+				System.out.println(gcd(60, 23));
+			}
+
+			public static int gcd(int x, int y) {
+
+				int r = Math.min(x, y);
+
+				while (true)
+				  if (x % r == 0 && y % r == 0) 
+					return r;
+				  else
+					r = r - 1;
+			}
+		}
+		</code>
+		</pre>
 		
 		<li>Greatest common division:</li>
 		
